@@ -46,7 +46,11 @@ jobs:
       steps:
       - uses: actions/checkout@v2
       - uses: actions/dowwnload-artifact@main
-        with:
+    - uses: actions/download-artifact@main
+      with:
+        name: webpack artifacts
+        path: public
+    - name: npm install, and test
           name: webpack artifacts
           path: public
       - name: Use Node.js ${{ matrix.node-version }}
